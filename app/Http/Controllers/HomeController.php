@@ -6,7 +6,17 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function index(){
-        return view('karyawan.index');
+    public function tentang()
+    {
+        return view('dashboards.tentang');
+    }
+
+    public function sejarah()
+    {
+        return view('dashboards.sejarah');
+    }
+    public function layanan()
+    {
+        return view('dashboards.layanan');
     }
 }

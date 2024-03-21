@@ -22,14 +22,14 @@ class StoreKaryawanRequest extends FormRequest
     public function rules()
     {
         return [
-            'nama_karyawan' => 'required' 
+            'nama' => 'required' 
         ];
     }
 
     public function messages()
     {
         return [
-            'nama_karyawan.required' => 'Data nama karyawan belum di isi cok! isi dulu!'
+            'nama.required' => 'Data nama karyawan belum di isi cok! isi dulu!'
         ];
     }
 }

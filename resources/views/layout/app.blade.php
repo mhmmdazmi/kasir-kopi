@@ -8,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
 
     <title>@yield('title')</title>
 
@@ -64,12 +66,52 @@
                     <i class="fas fa-fw fa-list"></i>
                     <span>Kategori</span></a>
             </li>
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <li class="nav-item d-none d-sm-inline-block">
+                <a class="nav-link" href="{{ url('jenis') }}">
+                    <i class="fas fa-fw fa-list"></i>
+                    <span>Jenis</span></a>
+            </li>
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <li class="nav-item d-none d-sm-inline-block">
+                <a class="nav-link" href="{{ url('produk_titipan') }}">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Produk Titipan</span></a>
+            </li>
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <li class="nav-item">
+                <a href="{{ url('tentang') }}" class="nav-link">
+                    <i class="fas fa-solid fa-question"></i>
+                    <span>Tentang Aplikasi</span></a>
+            </li>
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <li class="nav-item">
+                <a href="{{ url('sejarah') }}" class="nav-link">
+                    <i class="fas fa-solid fa-info"></i>
+                    <span>Sejarah Aplikasi</span></a>
+            </li>
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <li class="nav-item">
+                <a href="{{ url('layanan') }}" class="nav-link">
+                    <i class="fas fa-solid fa-info"></i>
+                    <span>Layanan Aplikasi</span></a>
+            </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider">
 
             <li class="nav-item">
-                <a class="nav-link" href="{{route('pemesanan')}}">
+                <a class="nav-link" href="{{route('menu')}}">
                     <i class="fas fa-fw fa-users"></i>
                     <span>Menu</span></a>
             </li>
@@ -256,9 +298,16 @@
         </div>
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="" crossorigin="anonymous"></script>
+    <script>
+        var $j = jQuery.noConflict();
+    </script>
+
     <!-- Bootstrap core JavaScript-->
     <script src="{{asset('template/vendor/jquery/jquery.min.js')}}"></script>
-    <script src="{{asset('template/vendor/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{asset('template/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
     <!-- Core plugin JavaScript-->
     <script src="{{asset('template/vendor/jquery-easing/jquery.easing.min.js')}}"></script>
@@ -272,7 +321,7 @@
 
     <!-- Page level custom scripts -->
     <script src="{{asset('template/js/demo/datatables-demo.js')}}"></script>
-
+    @stack('scripts')
 </body>
 
 </html>

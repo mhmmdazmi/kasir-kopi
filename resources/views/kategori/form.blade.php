@@ -2,8 +2,8 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h3 class="modal-title fs-5" id="exampleModalLabel">Tambah Barang</h3>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+        <h3 class="modal-title fs-5" id="exampleModalLabel">Tambah</h3>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -12,13 +12,7 @@
           @csrf
           <div id="method"></div>
           <div class="form-group row">
-            <label for="nama_kategori" class="col-sm-4 col-form-label">Nama Pengaju</label>
-            <div class="col-sm-8">
-              <input type="text" class="form-control" name="nama_kategori" id="nama_kategori">
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="nama_kategori" class="col-sm-4 col-form-label">Nama Barang</label>
+            <label for="nama_kategori" class="col-sm-4 col-form-label">Nama Kategori</label>
             <div class="col-sm-8">
               <input type="text" class="form-control" name="nama_kategori" id="nama_kategori">
             </div>
