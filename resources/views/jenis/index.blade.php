@@ -39,7 +39,7 @@
     @endsection
     @include('jenis.form')
 
-    @push('scripts')
+    @push('script')
     <script>
         $('.alert-success').fadeTo(2000, 500).slideUp(500, function() {
             $('.alert-success').slideUp(500)
@@ -94,6 +94,27 @@
                     modal.find('form').attr('action', `{{ url('jenis') }}/`)
                 }
             })
+            function destroy(id) {
+    if (confirm('Apakah Anda yakin ingin menghapus data ini?')) {
+        $.ajax({
+            url: '/hapus-data/' + id,
+            type: 'DELETE',
+            success: function(response) {
+                // Handle response dari server, misalnya:
+                if (response.success) {
+                    alert('Data berhasil dihapus.');
+                    // Refresh halaman atau tampilkan pesan sukses lainnya
+                } else {
+                    alert('Gagal menghapus data.');
+                }
+            },
+            error: function(xhr, status, error) {
+                alert('Terjadi kesalahan: ' + error);
+            }
+        });
+    }
+}
+
         })
     </script>
     @endpush

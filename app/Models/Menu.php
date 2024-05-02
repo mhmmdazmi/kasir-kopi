@@ -7,9 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Menu extends Model
 {
-    use HasFactory;
+    protected $guarded = ['id'];
+    protected $table = 'menu';
     public function jenis()
     {
         return $this->belongsTo(Jenis::class, 'jenis_id');
     }
 }
+

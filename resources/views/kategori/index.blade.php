@@ -39,7 +39,7 @@
     @endsection
     @include('kategori.form')
 
-    @push('scripts')
+    @push('script')
     <script>
         $('.alert-success').fadeTo(2000, 500).slideUp(500, function() {
             $('.alert-success').slideUp(500)

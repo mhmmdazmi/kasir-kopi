@@ -10,18 +10,18 @@
             </thead>
             <tbody>
                 <?php $no = 1; ?>
-                @foreach ($jenis as $jeni)
+                @foreach ($jenis as $jen)
                 <tr class="text-center">
                     <td>{{ $no++ }}</td>
-                    <td>{{ $jeni->nama_jenis }}</td>
+                    <td>{{ $jen->nama_jenis }}</td>
                     <td>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalFormJenis" data-mode="edit" data-id="{{ $jeni->id }}" data-nama_jenis="{{ $jeni->nama_jenis }}">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalFormJenis" data-mode="edit" data-id="{{ $jen->id }}" data-nama_jenis="{{ $jen->nama_jenis }}">
                             <i class="fas fa-edit"></i>
                         </button>
-                        <form action="{{ route('jenis.destroy', $jeni) }}" method="post" style="display:inline">
+                        <form action="{{ route('jenis.destroy', $jen) }}" method="post" style="display:inline">
                             @csrf
                             @method('DELETE')
-                            <button type="button" class="btn btn-danger btn-delete" data-id="{{ $jeni->id }}"><i class="fas fa-trash"></i></button>
+                            <button type="button" class="btn btn-danger btn-delete" data-id="{{ $jen->id }}"><i class="fas fa-trash"></i></button>
                         </form>
                     </td>
                 </tr>

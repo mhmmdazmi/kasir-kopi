@@ -7,7 +7,6 @@ use App\Http\Requests\StoreProdukTitipanRequest;
 use App\Http\Requests\UpdateProdukTitipanRequest;
 use Exception;
 use Illuminate\Database\QueryException;
-use Illuminate\Support\Facades\DB;
 use PDOException;
 
 class ProdukTitipanController extends Controller

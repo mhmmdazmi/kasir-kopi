@@ -10,13 +10,14 @@ use Illuminate\Database\QueryException;
 use PDOException;
 use Illuminate\Http\Request;
 
-class jenisController extends Controller
+class JenisController extends Controller
 {
     public function index()
     {
         return view('jenis.index', [
             'jenis' => Jenis::latest()->get()
         ]);
+      
     }
 
     public function store(StoreJenisRequest $request)
@@ -32,14 +33,17 @@ class jenisController extends Controller
 
         return redirect('jenis')->with('success', "Update Data Berhasil!");
     }
-    public function destroy(Jenis $jenis)
-    { {
-            try {
-                $jenis->delete();
-                return redirect('jenis')->with('success', 'Data berhasil dihapus!');
-            } catch (QueryException | Exception | PDOException $error) {
-                $this->failResponse($error->getMessage(), $error->getCode());
-            }
+    public function destroy(Jenis $jenis, $id) {
+        // Lakukan validasi dan verifikasi penghapusan data
+        $data = Jenis::find($id);
+        // Lakukan proses penghapusan data
+        $deleted = $data->delete();
+    
+        if ($deleted) {
+            return redirect('jenis')->with('success', 'Data berhasil dihapus!');
+        } else {
+            return redirect('jenis')->with('success', 'Data gagal dihapus!');
         }
     }
+    
 }

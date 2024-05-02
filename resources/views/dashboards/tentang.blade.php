@@ -12,7 +12,7 @@
             <h3 class="card-title">Tentang Aplikasi</h3>
         </div>
         <div class="card-body">
-            Coffee CilazMart adalah aplikasi kasir kafe yang dimana bisa membantu memudahkan pekerjaan admin staff di kafe.
+            Coffee CilazMart adalah sebuah aplikasi master data atau admin untuk kasir kafe yang dimana bisa membantu memudahkan pekerjaan admin staff di kafe.
         </div>
         <!-- /.card-body -->
         <div class="card-footer">

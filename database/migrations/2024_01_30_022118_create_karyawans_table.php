@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('nama', 100);
             $table->string('email' );
             $table->string('alamat');
-            $table->integer('no_telp');
+            $table->bigInteger('no_telp');
             $table->timestamps();
         });
     }

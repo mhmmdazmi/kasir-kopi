@@ -51,21 +51,29 @@
                     <span>Dashboard</span></a>
             </li>
             <!-- Divider -->
-            <hr class="sidebar-divider">
+            <!-- <hr class="sidebar-divider">
 
             <li class="nav-item">
                 <a class="nav-link" href="{{route('karyawan.index')}}">
                     <i class="fas fa-fw fa-users"></i>
                     <span>Karyawan</span></a>
-            </li>
+            </li> -->
             <!-- Divider -->
             <hr class="sidebar-divider">
+
+            <li class="nav-item d-none d-sm-inline-block">
+                <a class="nav-link" href="{{ url('pelanggan') }}">
+                    <i class="fas fa-fw fa-list"></i>
+                    <span>Pelanggan</span></a>
+            </li>
+            <!-- Divider -->
+            <!-- <hr class="sidebar-divider">
 
             <li class="nav-item d-none d-sm-inline-block">
                 <a class="nav-link" href="{{ url('kategori') }}">
                     <i class="fas fa-fw fa-list"></i>
                     <span>Kategori</span></a>
-            </li>
+            </li> -->
             <!-- Divider -->
             <hr class="sidebar-divider">
 
@@ -74,14 +82,46 @@
                     <i class="fas fa-fw fa-list"></i>
                     <span>Jenis</span></a>
             </li>
-            <!-- Divider -->
-            <hr class="sidebar-divider">
+        
+            <!-- <hr class="sidebar-divider">
 
             <li class="nav-item d-none d-sm-inline-block">
                 <a class="nav-link" href="{{ url('produk_titipan') }}">
                     <i class="fas fa-shopping-cart"></i>
                     <span>Produk Titipan</span></a>
             </li>
+    
+            <hr class="sidebar-divider">
+
+            <li class="nav-item d-none d-sm-inline-block">
+                <a class="nav-link" href="{{ url('absensi') }}">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Absensi</span></a>
+            </li> -->
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <li class="nav-item">
+                <a href="{{ url('menu') }}" class="nav-link">
+                    <i class="fas fa-solid fa-info"></i>
+                    <span>Menu</span></a>
+            </li>
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <li class="nav-item">
+                <a href="{{ url('stok') }}" class="nav-link">
+                    <i class="fas fa-solid fa-info"></i>
+                    <span>Stok</span></a>
+            </li>
+            <!-- Divider -->
+            <!-- <hr class="sidebar-divider">
+
+            <li class="nav-item">
+                <a href="{{ url('contact') }}" class="nav-link">
+                    <i class="fas fa-solid fa-question"></i>
+                    <span>Contact Us</span></a>
+            </li> -->
             <!-- Divider -->
             <hr class="sidebar-divider">
 
@@ -106,60 +146,11 @@
                     <i class="fas fa-solid fa-info"></i>
                     <span>Layanan Aplikasi</span></a>
             </li>
-
             <!-- Divider -->
             <hr class="sidebar-divider">
 
             <li class="nav-item">
-                <a class="nav-link" href="{{route('menu')}}">
-                    <i class="fas fa-fw fa-users"></i>
-                    <span>Menu</span></a>
-            </li>
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            <li class="nav-item">
-                <a class="nav-link" href="{{route('pemesanan')}}">
-                    <i class="fas fa-fw fa-users"></i>
-                    <span>Stok</span></a>
-            </li>
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            <li class="nav-item">
-                <a class="nav-link" href="{{route('pemesanan')}}">
-                    <i class="fas fa-fw fa-users"></i>
-                    <span>Pelanggan</span></a>
-            </li>
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            <li class="nav-item">
-                <a class="nav-link" href="{{route('pemesanan')}}">
-                    <i class="fas fa-fw fa-users"></i>
-                    <span>Transaksi</span></a>
-            </li>
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            <li class="nav-item">
-                <a class="nav-link" href="{{route('pemesanan')}}">
-                    <i class="fas fa-fw fa-users"></i>
-                    <span>Detail Transaksi</span></a>
-            </li>
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            <li class="nav-item">
-                <a class="nav-link" href="{{route('pemesanan')}}">
-                    <i class="fas fa-fw fa-users"></i>
-                    <span>Meja</span></a>
-            </li>
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            <li class="nav-item">
-                <a class="nav-link" href="{{route('pemesanan')}}">
+                <a class="nav-link" href="{{route('pemesanan.index')}}">
                     <i class="fas fa-fw fa-users"></i>
                     <span>Pemesanan</span></a>
             </li>
@@ -292,14 +283,16 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="btn btn-primary btn-user">Logout</a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
                 </div>
             </div>
         </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="" crossorigin="anonymous"></script>
     <script>
         var $j = jQuery.noConflict();
@@ -321,7 +314,10 @@
 
     <!-- Page level custom scripts -->
     <script src="{{asset('template/js/demo/datatables-demo.js')}}"></script>
-    @stack('scripts')
+
+    <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    @stack('script')
 </body>
 
 </html>

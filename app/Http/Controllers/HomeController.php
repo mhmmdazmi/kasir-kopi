@@ -19,4 +19,14 @@ class HomeController extends Controller
     {
         return view('dashboards.layanan');
     }
+
+    public function contact()
+    {
+        return view('contact.contact');
+    }
+
+    public function login()
+    {
+        return view('layout.login');
+    }
 }
